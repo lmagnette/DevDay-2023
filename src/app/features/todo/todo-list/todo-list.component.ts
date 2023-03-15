@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { Observable } from 'rxjs';
 import { Todo } from '../todo';
-import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',

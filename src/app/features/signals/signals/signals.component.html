@@ -1,0 +1,14 @@
+<h1>Signals Sample</h1>
+<div class="container">
+
+  <div class="card">
+    <h2>Counter</h2>
+    <p>Count {{count()}}</p>
+    <p>Double Count {{doubleCount()}}</p>
+    <button (click)="increment()">Increment</button>
+    <button (click)="reset()">Reset</button>
+    <ul>
+      <li *ngFor="let value of history()">{{value}}</li>
+    </ul>
+  </div>
+</div>
