@@ -1,0 +1,8 @@
+<h1>Users</h1>
+<div class="container">
+  <div *ngFor="let user of users$ | async" class="card">
+    <h2>{{user.name}}</h2>
+    <p>{{user.email}}</p>
+    <p>{{user.phone}}</p>
+  </div>
+</div>

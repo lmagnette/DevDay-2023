@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  {path: 'todo', loadChildren: () => import('./features/todo/todo.module').then(m => m.TodoModule)},
-  {path: '', redirectTo: 'todo', pathMatch: 'full'},
+  {path: 'todos', loadChildren: () => import('./features/todo/todo.module').then(m => m.TodoModule)},
+  {path: 'users', loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule)},
+  {path: '', redirectTo: 'todos', pathMatch: 'full'},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
