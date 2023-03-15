@@ -1,7 +1,16 @@
-<h1>TODO's</h1>
-<div class="container">
-<div *ngFor="let todo of todos$ | async" class="entry">
-  <input type="checkbox" [(ngModel)]="todo.completed">
-  <label>{{todo.title}}</label>
+<h1>TODO's
+  <button (click)="addingTodo = true">+</button>
+</h1>
+<div class="container" *ngIf="addingTodo">
+  <form [formGroup]="todoForm">
+    <label for="title">Title:</label>
+    <input id="title" type="text" formControlName="title">
+    <button (click)="addTodo()" [disabled]="false">Add</button>
+  </form>
 </div>
+<div class="container">
+  <div *ngFor="let todo of todos$ | async" class="entry">
+    <input type="checkbox" [(ngModel)]="todo.completed">
+    <label>{{todo.title}}</label>
+  </div>
 </div>
