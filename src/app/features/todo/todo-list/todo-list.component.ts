@@ -2,12 +2,21 @@ import { Component } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { Observable } from 'rxjs';
 import { Todo } from '../todo';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 
-@Component({
+@Component( {
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  styleUrls: [ './todo-list.component.scss' ],
+  imports: [
+    NgIf,
+    ReactiveFormsModule,
+    FormsModule,
+    NgForOf,
+    AsyncPipe
+  ],
+  standalone: true
 })
 export class TodoListComponent {
 
@@ -33,4 +42,5 @@ export class TodoListComponent {
     this.todoForm.value.title = this.todoForm.value.title?.trim();
     this.todoForm.value.completed = false;
   }
+
 }
