@@ -1,7 +1,6 @@
 import { Component, computed, effect, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SignalsCountComponent } from '../signals-count/signals-count.component';
-import { AppModule } from '../../../app.module';
 import { SignalsSearchComponent } from '../signals-search/signals-search.component';
 
 @Component({
