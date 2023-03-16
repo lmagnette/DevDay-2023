@@ -8,7 +8,8 @@ import { NgForOf } from '@angular/common';
     <h2>Signal Search</h2>
     <hr/>
     <p>Searched value: {{search()}}</p>
-    <input type="text" (input)="setSearchString($event)"/>
+    <label for="searchInput">Search :</label>
+    <input id="searchInput" type="text" (input)="setSearchString($event)"/>
     <ul>
       <li *ngFor="let user of filteredUsers()">{{user.name}}</li>
     </ul>
