@@ -1,6 +1,9 @@
 <h1>TODO's
   <button (click)="addingTodo = true">+</button>
 </h1>
+<h2 *ngIf="param$ | async">
+  Param value is: {{param$ | async}}
+</h2>
 <div class="column" *ngIf="addingTodo">
   <div class="card">
     <form [formGroup]="todoForm">

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Todo } from '../todo';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
+import { getRouteParams$ } from '../../../shared/routes.composable';
 
 @Component( {
   selector: 'app-todo-list',
@@ -27,8 +28,10 @@ export class TodoListComponent {
     id: FormControl<number>,
     completed: FormControl<boolean>
   }>;
+  param$ = getRouteParams$('id');
 
   constructor(private todoService: TodoService, formBuilder: FormBuilder) {
+
     this.todoForm = formBuilder.nonNullable.group({
       title: '',
       id: 0,

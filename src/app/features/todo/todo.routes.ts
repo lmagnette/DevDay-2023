@@ -5,5 +5,9 @@ export const TODO_ROUTES:Routes =[
   {
     path: '',
     component: TodoListComponent,
+  },
+  {
+    path: ':id',
+    component: TodoListComponent,
   }
 ]
