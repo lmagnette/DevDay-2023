@@ -8,7 +8,7 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 const ROUTES: Routes = [
   {path: 'todos', loadChildren: () => import('./app/features/todo/todo.routes').then(m => m.TODO_ROUTES)},
-  {path: 'users', loadChildren: () => import('./app/features/admin/admin.module').then(m => m.AdminModule)},
+  {path: 'users', loadChildren: () => import('./app/features/admin/admin.routes').then(m => m.ADMIN_ROUTES)},
   {path: 'signals', loadComponent: () => import('./app/features/signals/signals/signals.component').then( m => m.SignalsComponent)},
   {path: '', redirectTo: 'todos', pathMatch: 'full'},
 ];
