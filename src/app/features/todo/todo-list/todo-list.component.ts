@@ -13,6 +13,7 @@ import {
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { getRouteParams$ } from '../../../shared/routes.composable';
 import { BasicTooltipDirective } from '../../../shared/basic-tooltip.directive';
+import { AppTooltipDirective } from '../../../shared/app-tooltip.directive';
 
 @Component( {
   selector: 'app-todo-list',
@@ -24,7 +25,8 @@ import { BasicTooltipDirective } from '../../../shared/basic-tooltip.directive';
     FormsModule,
     NgForOf,
     AsyncPipe,
-    BasicTooltipDirective
+    BasicTooltipDirective,
+    AppTooltipDirective
   ],
   standalone: true
 })
