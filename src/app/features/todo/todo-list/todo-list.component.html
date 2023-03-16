@@ -1,5 +1,5 @@
 <h1>TODO's
-  <button (click)="addingTodo = true">+</button>
+  <button basicTooltip [tooltipText]="'Add a new todo'" [tooltipPlacement]="'bottom'" (click)="addingTodo = true">+</button>
 </h1>
 <h2 *ngIf="param$ | async">
   Param value is: {{param$ | async}}
@@ -9,7 +9,7 @@
     <form [formGroup]="todoForm">
       <label for="title">Title:</label>
       <input id="title" type="text" formControlName="title">
-      <button (click)="addTodo()" [disabled]="!todoForm.valid">Add</button>
+      <button (click)="addTodo()" [disabled]="!todoForm.valid" basicTooltip [tooltipText]="'Create new todo'">Add</button>
     </form>
   </div>
 </div>
