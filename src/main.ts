@@ -7,7 +7,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 const ROUTES: Routes = [
-  {path: 'todos', loadChildren: () => import('./app/features/todo/todo.module').then(m => m.TodoModule)},
+  {path: 'todos', loadComponent: () => import('./app/features/todo/todo-list/todo-list.component').then(c=>c.TodoListComponent) },
   {path: 'users', loadChildren: () => import('./app/features/admin/admin.module').then(m => m.AdminModule)},
   {path: 'signals', loadComponent: () => import('./app/features/signals/signals/signals.component').then( m => m.SignalsComponent)},
   {path: '', redirectTo: 'todos', pathMatch: 'full'},
