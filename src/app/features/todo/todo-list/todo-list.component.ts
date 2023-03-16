@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { Observable } from 'rxjs';
 import { Todo } from '../todo';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormRecord,
+  FormsModule,
+  NonNullableFormBuilder,
+  ReactiveFormsModule
+} from '@angular/forms';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { getRouteParams$ } from '../../../shared/routes.composable';
 
@@ -30,12 +37,12 @@ export class TodoListComponent {
   }>;
   param$ = getRouteParams$('id');
 
-  constructor(private todoService: TodoService, formBuilder: FormBuilder) {
+  constructor(private todoService: TodoService, formBuilder: NonNullableFormBuilder) {
 
-    this.todoForm = formBuilder.nonNullable.group({
+    this.todoForm = formBuilder.group({
       title: '',
       id: 0,
-      completed: formBuilder.nonNullable.control(false)
+      completed: formBuilder.control(false),
     })
   }
 
@@ -44,6 +51,15 @@ export class TodoListComponent {
     this.todoForm.value.id = Math.floor(Math.random() * 1000);
     this.todoForm.value.title = this.todoForm.value.title?.trim();
     this.todoForm.value.completed = false;
+
+
+
+    const langs = new FormRecord<FormControl<string>>({ });
+
+    langs.addControl('keyName',
+      new FormControl('English', { nonNullable: true })
+    );
+
   }
 
 }
