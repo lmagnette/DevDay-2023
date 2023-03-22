@@ -13,6 +13,9 @@ import { SignalsSearchComponent } from '../signals-search/signals-search.compone
       <div class="card">
         <app-signals-count></app-signals-count>
       </div>
+       <div class="card">
+         <app-signals-search></app-signals-search>
+       </div>
     </div>
   `,
   styleUrls: ['./signals.component.scss']
