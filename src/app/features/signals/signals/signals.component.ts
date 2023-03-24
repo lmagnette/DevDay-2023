@@ -20,7 +20,7 @@ import { SignalsSearchComponent } from '../signals-search/signals-search.compone
   `,
   styleUrls: ['./signals.component.scss']
 })
-export class SignalsComponent implements OnInit {
+export default class SignalsComponent implements OnInit {
 
   count = signal(0);
   doubleCount = computed(() => this.count() * 2);
